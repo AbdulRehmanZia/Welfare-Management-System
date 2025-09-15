@@ -1,4 +1,4 @@
-const ApiResponse = (res, statusCode, data = null, message, meta) => {
+export const ApiResponse = (res, statusCode, data = null, message, meta) => {
   const response = {
     statusCode,
     data,
@@ -12,4 +12,13 @@ const ApiResponse = (res, statusCode, data = null, message, meta) => {
   return res.status(statusCode).json(response);
 };
 
-export default ApiResponse;
+
+export const ApiError = (res, statusCode, message, error = null) => {
+  return res.status(statusCode).json({
+    success: false,
+    message,
+    error,
+  });
+};
+
+

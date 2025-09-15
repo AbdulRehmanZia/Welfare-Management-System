@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import app from "./src/app.js";
 import connectDB from "./src/db/index.js";
 
-dotenv.config({ path: "./.env" });
+dotenv.config({ path: "./env" });
 
 process.on("uncaughtException", (err) => {
   console.error("UNCAUGHT EXCEPTION!, shutting down...");

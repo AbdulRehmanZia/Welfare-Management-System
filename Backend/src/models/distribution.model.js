@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const distributionSchema = new mongoose.Schema(
   {
-    beneficiary: {
+    beneficiaryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Beneficiary",
       required: true,

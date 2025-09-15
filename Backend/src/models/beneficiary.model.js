@@ -1,13 +1,15 @@
 import mongoose from "mongoose";
 const beneficiarySchema = new mongoose.Schema(
   {
-    fullname: {
+    fullName: {
       type: String,
       required: true,
     },
     CNIC: {
       type: String,
       required: true,
+      unique: true
+
     },
     address: {
       type: String,
@@ -15,11 +17,6 @@ const beneficiarySchema = new mongoose.Schema(
     },
     familySize: {
       type: Number,
-      required: true,
-    },
-    packageType: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Package",
       required: true,
     },
   },
